@@ -1,0 +1,40 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-top: 90px;
+}
+#cal{
+border: 1px solid #14213d;
+border-radius: 10px;
+width: 230px;
+background-color:  #14213d;
+}
+.con
+{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+.b
+{
+height: 60px;
+width: 60px;
+margin: 3px;
+}
+.dis{
+width: 85%;
+margin: 10px;
+font-size: 25px;
+}
+#me
+{
+color: #fca311;
+text-align: center;
+margin: 2px;
+}
+#remove:hover
+{
+    border: black;
+    background-color: rgb(247, 41, 41);
+}
