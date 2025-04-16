@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.butterfly-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.butterfly {
+    position: absolute;
+    animation: fly 10s linear infinite;
+    transform-style: preserve-3d;
+}
+
+.butterfly1 {
+    animation-delay: 0s;
+}
+
+.butterfly2 {
+    animation-delay: 2s;
+}
+
+.butterfly3 {
+    animation-delay: 4s;
+}
+
+.butterfly4 {
+    animation-delay: 6s;
+}
+
+.wing {
+    position: absolute;
+    animation: flap 0.5s ease-in-out infinite;
+    transform-origin: bottom center;
+}
+
+.wing .bit {
+    background: dodgerblue;
+    border-radius: 50%;
+    position: absolute;
+    width: 100px;
+    height: 70px;
+    transform-origin: 50% 50%;
+}
+
+.wing .bit:last-child {
+    width: 80px;
+    height: 50px;
+    top: 20px;
+    left: 20px;
+    background: lightblue;
+}
+
+.butterfly1 .wing:first-child,
+.butterfly2 .wing:first-child,
+.butterfly3 .wing:first-child,
+.butterfly4 .wing:first-child {
+    transform: rotate(30deg);
+    left: -70px;
+}
+
+.butterfly1 .wing:last-child,
+.butterfly2 .wing:last-child,
+.butterfly3 .wing:last-child,
+.butterfly4 .wing:last-child {
+    transform: rotate(-30deg);
+    right: -70px;
+}
+
+.butterfly::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 100px;
+    background: #333;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    z-index: 1;
+}
+
+@keyframes flap {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(15deg);
+    }
+}
+
+@keyframes fly {
+    0% {
+        transform: translateY(100vh) translateX(10vw) rotate(0deg);
+    }
+    50% {
+        transform: translateY(50vh) translateX(50vw) rotate(45deg);
+    }
+    100% {
+        transform: translateY(0vh) translateX(90vw) rotate(90deg);
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butterfly Animation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="butterfly-container">
+        <div class="butterfly butterfly1">
+            <div class="wing">
+                <div class="bit"></div>
+                <div class="bit"></div>
+            </div>
+            <div class="wing">
+                <div class="bit"></div>
+                <div class="bit"></div>
+            </div>
+        </div>
+        <div class="butterfly butterfly2">
+            <div class="wing">
+                <div class="bit"></div>
+                <div class="bit"></div>
+            </div>
+            <div class="wing">
+                <div class="bit"></div>
+                <div class="bit"></div>
+            </div>
+        </div>
+        <div class="butterfly butterfly3">
+            <div class="wing">
+                <div class="bit"></div>
+                <div class="bit"></div>
+            </div>
+            <div class="wing">
+                <div class="bit"></div>
+                <div class="bit"></div>
+            </div>
+        </div>
+        <div class="butterfly butterfly4">
+            <div class="wing">
+                <div class="bit"></div>
+                <div class="bit"></div>
+            </div>
+            <div class="wing">
+                <div class="bit"></div>
+                <div class="bit"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+</body>
+</html>
