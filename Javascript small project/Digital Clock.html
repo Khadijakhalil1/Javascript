@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .clock {
+            color: #00ffcc;
+            font-size: 80px;
+            background: #333;
+            padding: 30px 60px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px #00ffcc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="clock" id="clock">00:00:00</div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+
+            // 2 digits ka format maintain karne ke liye
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            const timeString = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('clock').textContent = timeString;
+        }
+
+        setInterval(updateClock, 1000); // Har second clock update karo
+        updateClock(); // Page load par bhi clock update karo
+    </script>
+
+</body>
+</html>
