@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asia Bazaar — Shop Everything, One Place</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="logo">
+        <img src="images/logo-mark.svg" alt="">
+        Asia <span class="accent">Bazaar</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="pages/products.html">Shop</a></li>
+        <li><a href="pages/cart.html">Cart</a></li>
+        <li><a href="pages/checkout.html">Checkout</a></li>
+        <li><a href="pages/contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn" aria-label="Search">🔍</button>
+        <a href="pages/cart.html" class="icon-btn" aria-label="Cart">
+          🛍️<span class="badge">3</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-copy">
+        <span class="eyebrow">New season, new finds</span>
+        <h1>Everything you<br>need, under <em>one</em><br>bazaar roof.</h1>
+        <p>From gadgets to home decor — Asia Bazaar brings every category together with fair prices and fast delivery. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="hero-actions">
+          <a href="pages/products.html" class="btn btn-primary">Start Shopping →</a>
+          <a href="#categories" class="btn btn-outline">Browse Categories</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>12k+</strong><span>Products listed</span></div>
+          <div><strong>40+</strong><span>Categories</span></div>
+          <div><strong>98%</strong><span>Happy customers</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="images/hero-illustration.png" alt="Illustration of a shopping bag surrounded by parcels under a bazaar archway">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CATEGORIES ===================== -->
+  <section class="categories" id="categories">
+    <div class="container">
+      <div class="categories-header">
+        <div>
+          <span class="eyebrow">Shop by category</span>
+          <h2 class="section-heading">Find your next favorite</h2>
+        </div>
+        <p class="section-sub">Six of our most-loved departments, curated so you spend less time searching and more time shopping.</p>
+      </div>
+
+      <div class="category-grid">
+        <a href="pages/products.html" class="category-card">
+          <div class="category-icon"><img src="images/icon-electronics.png" alt=""></div>
+          <h3>Electronics</h3>
+        </a>
+        <a href="pages/products.html" class="category-card">
+          <div class="category-icon"><img src="images/icon-fashion.png" alt=""></div>
+          <h3>Fashion</h3>
+        </a>
+        <a href="pages/products.html" class="category-card">
+          <div class="category-icon"><img src="images/icon-home.png" alt=""></div>
+          <h3>Home &amp; Living</h3>
+        </a>
+        <a href="pages/products.html" class="category-card">
+          <div class="category-icon"><img src="images/icon-beauty.png" alt=""></div>
+          <h3>Beauty &amp; Care</h3>
+        </a>
+        <a href="pages/products.html" class="category-card">
+          <div class="category-icon"><img src="images/icon-sports.png" alt=""></div>
+          <h3>Sports &amp; Fitness</h3>
+        </a>
+        <a href="pages/products.html" class="category-card">
+          <div class="category-icon"><img src="images/icon-toys.png" alt=""></div>
+          <h3>Toys &amp; Kids</h3>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURED PRODUCTS ===================== -->
+  <section class="products">
+    <div class="container">
+      <div class="products-header">
+        <div>
+          <span class="eyebrow">Handpicked for you</span>
+          <h2 class="section-heading">Featured products</h2>
+        </div>
+        <div class="tab-filters">
+          <button class="active">All</button>
+          <button>New</button>
+          <button>Best sellers</button>
+        </div>
+      </div>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-thumb">
+            <span class="product-tag">NEW</span>
+            <span class="product-wish">♡</span>
+            <img src="images/product-headphones.png" alt="Wireless over-ear headphones illustration">
+          </div>
+          <div class="product-info">
+            <span class="cat">Electronics</span>
+            <h3>Lorem Wireless Headphones</h3>
+            <div class="price-row">
+              <span class="price">$59.00</span>
+              <button class="add-btn">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-thumb">
+            <span class="product-tag">-20%</span>
+            <span class="product-wish">♡</span>
+            <img src="images/product-sneaker.png" alt="Sneaker illustration">
+          </div>
+          <div class="product-info">
+            <span class="cat">Fashion</span>
+            <h3>Ipsum Street Sneakers</h3>
+            <div class="price-row">
+              <span class="price">$45.00 <span class="old">$56</span></span>
+              <button class="add-btn">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-thumb">
+            <span class="product-tag">HOT</span>
+            <span class="product-wish">♡</span>
+            <img src="images/product-watch.png" alt="Wrist watch illustration">
+          </div>
+          <div class="product-info">
+            <span class="cat">Accessories</span>
+            <h3>Dolor Classic Watch</h3>
+            <div class="price-row">
+              <span class="price">$89.00</span>
+              <button class="add-btn">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-thumb">
+            <span class="product-tag">NEW</span>
+            <span class="product-wish">♡</span>
+            <img src="images/product-bag.png" alt="Tote bag illustration">
+          </div>
+          <div class="product-info">
+            <span class="cat">Bags</span>
+            <h3>Amet Canvas Tote</h3>
+            <div class="price-row">
+              <span class="price">$32.00</span>
+              <button class="add-btn">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROMOTIONAL BANNER ===================== -->
+  <section class="promo">
+    <div class="container">
+      <div class="promo-banner">
+        <img src="images/promo-banner.png" class="bg-illustration" alt="">
+        <div class="promo-content">
+          <span class="eyebrow">Limited time</span>
+          <h2>End of season sale — up to 50% off</h2>
+          <p>Lorem ipsum dolor sit amet consectetur. Stock up on your favorite categories before the offer ends.</p>
+          <a href="pages/products.html" class="btn btn-primary">Shop the Sale →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NEWSLETTER ===================== -->
+  <section class="newsletter">
+    <div class="container">
+      <div>
+        <h3>Get 10% off your first order</h3>
+        <p>Sign up for restock alerts, drops, and bazaar-only deals.</p>
+      </div>
+      <form onsubmit="return false;">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="images/logo-mark.svg" alt="">
+            Asia Bazaar
+          </a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit — every category, one honest marketplace.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="pages/products.html">All Products</a></li>
+            <li><a href="pages/products.html">New Arrivals</a></li>
+            <li><a href="pages/products.html">Best Sellers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="pages/contact.html">Contact Us</a></li>
+            <li><a href="pages/checkout.html">Shipping Info</a></li>
+            <li><a href="pages/cart.html">Track Order</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Be Global</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Asia Bazaar. All rights reserved.</span>
+        <span>Built for the Be Global internship task</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
