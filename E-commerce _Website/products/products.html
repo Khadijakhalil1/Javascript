@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop All Products — Asia Bazaar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/shop.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="../index.html" class="logo">
+        <img src="../images/logo-mark.svg" alt="">
+        Asia <span class="accent">Bazaar</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="products.html" class="active">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn" aria-label="Search">🔍</button>
+        <a href="cart.html" class="icon-btn" aria-label="Cart">
+          🛍️<span class="badge">3</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================== PAGE HEADER ===================== -->
+  <section class="shop-hero">
+    <div class="container">
+      <span class="eyebrow">40+ categories, one bazaar</span>
+      <h1>Shop All Products</h1>
+      <p class="breadcrumb"><a href="../index.html">Home</a> / <span>Shop</span></p>
+    </div>
+  </section>
+
+  <!-- ===================== SHOP LAYOUT ===================== -->
+  <section class="shop">
+    <div class="container shop-layout">
+
+      <!-- SIDEBAR FILTERS -->
+      <aside class="filters" aria-label="Product filters">
+        <div class="filter-block">
+          <h3>Search</h3>
+          <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search products…">
+            <span>🔍</span>
+          </div>
+        </div>
+
+        <div class="filter-block">
+          <h3>Category</h3>
+          <ul class="filter-list" id="categoryFilters">
+            <li><label><input type="checkbox" value="all" checked> All Products <span>(8)</span></label></li>
+            <li><label><input type="checkbox" value="electronics"> Electronics <span>(1)</span></label></li>
+            <li><label><input type="checkbox" value="fashion"> Fashion <span>(2)</span></label></li>
+            <li><label><input type="checkbox" value="home"> Home &amp; Living <span>(2)</span></label></li>
+            <li><label><input type="checkbox" value="accessories"> Accessories <span>(2)</span></label></li>
+            <li><label><input type="checkbox" value="bags"> Bags <span>(1)</span></label></li>
+          </ul>
+        </div>
+
+        <div class="filter-block">
+          <h3>Price Range</h3>
+          <input type="range" id="priceRange" min="0" max="150" value="150" step="5">
+          <div class="price-range-labels">
+            <span>$0</span>
+            <span id="priceValue">$150</span>
+          </div>
+        </div>
+
+        <div class="filter-block">
+          <h3>Availability</h3>
+          <ul class="filter-list">
+            <li><label><input type="checkbox" checked> In Stock</label></li>
+            <li><label><input type="checkbox"> On Sale</label></li>
+          </ul>
+        </div>
+
+        <button class="btn btn-outline reset-btn" id="resetFilters">Reset Filters</button>
+      </aside>
+
+      <!-- PRODUCTS -->
+      <div class="shop-main">
+        <div class="shop-toolbar">
+          <p id="resultCount"><strong>8</strong> products found</p>
+          <div class="sort-box">
+            <label for="sortSelect">Sort by</label>
+            <select id="sortSelect">
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name-asc">Name: A–Z</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="product-grid shop-grid" id="productGrid">
+
+          <div class="product-card" data-category="electronics" data-price="59" data-name="Lorem Wireless Headphones">
+            <a href="product-detail.html?id=headphones">
+              <div class="product-thumb">
+                <span class="product-tag">NEW</span>
+                <span class="product-wish">♡</span>
+                <img src="../images/product-headphones.png" alt="Wireless over-ear headphones">
+              </div>
+              <div class="product-info">
+                <span class="cat">Electronics</span>
+                <h3>Lorem Wireless Headphones</h3>
+                <div class="price-row">
+                  <span class="price">$59.00</span>
+                  <button class="add-btn">+</button>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card" data-category="fashion" data-price="45" data-name="Ipsum Street Sneakers">
+            <a href="product-detail.html?id=sneaker">
+              <div class="product-thumb">
+                <span class="product-tag">-20%</span>
+                <span class="product-wish">♡</span>
+                <img src="../images/product-sneaker.png" alt="Street sneakers">
+              </div>
+              <div class="product-info">
+                <span class="cat">Fashion</span>
+                <h3>Ipsum Street Sneakers</h3>
+                <div class="price-row">
+                  <span class="price">$45.00 <span class="old">$56</span></span>
+                  <button class="add-btn">+</button>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card" data-category="accessories" data-price="89" data-name="Dolor Classic Watch">
+            <a href="product-detail.html?id=watch">
+              <div class="product-thumb">
+                <span class="product-tag">HOT</span>
+                <span class="product-wish">♡</span>
+                <img src="../images/product-watch.png" alt="Classic wrist watch">
+              </div>
+              <div class="product-info">
+                <span class="cat">Accessories</span>
+                <h3>Dolor Classic Watch</h3>
+                <div class="price-row">
+                  <span class="price">$89.00</span>
+                  <button class="add-btn">+</button>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card" data-category="bags" data-price="32" data-name="Amet Canvas Tote">
+            <a href="product-detail.html?id=bag">
+              <div class="product-thumb">
+                <span class="product-tag">NEW</span>
+                <span class="product-wish">♡</span>
+                <img src="../images/product-bag.png" alt="Canvas tote bag">
+              </div>
+              <div class="product-info">
+                <span class="cat">Bags</span>
+                <h3>Amet Canvas Tote</h3>
+                <div class="price-row">
+                  <span class="price">$32.00</span>
+                  <button class="add-btn">+</button>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card" data-category="home" data-price="41" data-name="Consectetur Table Lamp">
+            <a href="product-detail.html?id=lamp">
+              <div class="product-thumb">
+                <span class="product-wish">♡</span>
+                <img src="../images/product-lamp.png" alt="Table lamp">
+              </div>
+              <div class="product-info">
+                <span class="cat">Home &amp; Living</span>
+                <h3>Consectetur Table Lamp</h3>
+                <div class="price-row">
+                  <span class="price">$41.00</span>
+                  <button class="add-btn">+</button>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card" data-category="accessories" data-price="38" data-name="Elit Aviator Sunglasses">
+            <a href="product-detail.html?id=sunglasses">
+              <div class="product-thumb">
+                <span class="product-tag">-15%</span>
+                <span class="product-wish">♡</span>
+                <img src="../images/product-sunglasses.png" alt="Aviator sunglasses">
+              </div>
+              <div class="product-info">
+                <span class="cat">Accessories</span>
+                <h3>Elit Aviator Sunglasses</h3>
+                <div class="price-row">
+                  <span class="price">$38.00 <span class="old">$45</span></span>
+                  <button class="add-btn">+</button>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card" data-category="fashion" data-price="54" data-name="Sed Weekender Backpack">
+            <a href="product-detail.html?id=backpack">
+              <div class="product-thumb">
+                <span class="product-wish">♡</span>
+                <img src="../images/product-backpack.png" alt="Weekender backpack">
+              </div>
+              <div class="product-info">
+                <span class="cat">Fashion</span>
+                <h3>Sed Weekender Backpack</h3>
+                <div class="price-row">
+                  <span class="price">$54.00</span>
+                  <button class="add-btn">+</button>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="product-card" data-category="home" data-price="24" data-name="Vitae Ceramic Planter">
+            <a href="product-detail.html?id=plant">
+              <div class="product-thumb">
+                <span class="product-tag">NEW</span>
+                <span class="product-wish">♡</span>
+                <img src="../images/product-plant.png" alt="Ceramic planter with plant">
+              </div>
+              <div class="product-info">
+                <span class="cat">Home &amp; Living</span>
+                <h3>Vitae Ceramic Planter</h3>
+                <div class="price-row">
+                  <span class="price">$24.00</span>
+                  <button class="add-btn">+</button>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+
+        <p class="empty-state" id="emptyState" hidden>No products match your filters. Try resetting them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <img src="../images/logo-mark.svg" alt="">
+            Asia Bazaar
+          </a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit — every category, one honest marketplace.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="products.html">New Arrivals</a></li>
+            <li><a href="products.html">Best Sellers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="checkout.html">Shipping Info</a></li>
+            <li><a href="cart.html">Track Order</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Be Global</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Asia Bazaar. All rights reserved.</span>
+        <span>Built for the Be Global internship task</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/shop.js"></script>
+</body>
+</html>

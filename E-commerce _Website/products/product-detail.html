@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lorem Wireless Headphones — Asia Bazaar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/shop.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="../index.html" class="logo">
+        <img src="../images/logo-mark.svg" alt="">
+        Asia <span class="accent">Bazaar</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="products.html" class="active">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="checkout.html">Checkout</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn" aria-label="Search">🔍</button>
+        <a href="cart.html" class="icon-btn" aria-label="Cart">
+          🛍️<span class="badge">3</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="shop-hero">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="products.html">Shop</a> / <span>Lorem Wireless Headphones</span></p>
+    </div>
+  </section>
+
+  <!-- ===================== PRODUCT DETAIL ===================== -->
+  <section class="product-detail">
+    <div class="container detail-layout">
+
+      <!-- GALLERY -->
+      <div class="gallery">
+        <div class="gallery-main">
+          <img src="../images/product-headphones.png" alt="Lorem Wireless Headphones" id="mainImage">
+        </div>
+        <div class="gallery-thumbs">
+          <button class="thumb active" data-img="../images/product-headphones.png">
+            <img src="../images/product-headphones.png" alt="">
+          </button>
+          <button class="thumb" data-img="../images/product-sneaker.png">
+            <img src="../images/product-sneaker.png" alt="">
+          </button>
+          <button class="thumb" data-img="../images/product-watch.png">
+            <img src="../images/product-watch.png" alt="">
+          </button>
+        </div>
+      </div>
+
+      <!-- INFO -->
+      <div class="detail-info">
+        <span class="cat">Electronics</span>
+        <h1>Lorem Wireless Headphones</h1>
+
+        <div class="detail-rating">
+          <span class="stars">★★★★☆</span>
+          <span class="rating-count">128 reviews</span>
+        </div>
+
+        <div class="detail-price">
+          <span class="price">$59.00</span>
+        </div>
+
+        <p class="detail-desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          potenti, over-ear cushions with plush memory foam and a 30-hour
+          battery life. Ut enim ad minim veniam, quis nostrud exercitation
+          ullamco laboris nisi ut aliquip.
+        </p>
+
+        <div class="variant-block">
+          <h3>Color</h3>
+          <div class="swatches">
+            <button class="swatch active" style="--sw: #1A1A2E" data-value="Midnight Navy" aria-label="Midnight Navy"></button>
+            <button class="swatch" style="--sw: #FF6B35" data-value="Bold Orange" aria-label="Bold Orange"></button>
+            <button class="swatch" style="--sw: #FFB347" data-value="Warm Amber" aria-label="Warm Amber"></button>
+          </div>
+          <p class="variant-selected">Selected: <span id="colorLabel">Midnight Navy</span></p>
+        </div>
+
+        <div class="variant-block">
+          <h3>Size</h3>
+          <div class="size-options">
+            <button class="size-btn" data-value="S">S</button>
+            <button class="size-btn active" data-value="M">M</button>
+            <button class="size-btn" data-value="L">L</button>
+          </div>
+        </div>
+
+        <div class="qty-cart-row">
+          <div class="qty-stepper">
+            <button id="qtyMinus" aria-label="Decrease quantity">−</button>
+            <span id="qtyValue">1</span>
+            <button id="qtyPlus" aria-label="Increase quantity">+</button>
+          </div>
+          <button class="btn btn-primary add-to-cart-btn" id="addToCartBtn">Add to Cart — $59.00</button>
+          <button class="icon-btn wish-btn" aria-label="Add to wishlist">♡</button>
+        </div>
+
+        <p class="add-confirm" id="addConfirm" hidden>Added to cart ✓</p>
+
+        <ul class="detail-meta">
+          <li>✓ Free shipping on orders over $50</li>
+          <li>✓ 30-day hassle-free returns</li>
+          <li>✓ Secure checkout</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- DESCRIPTION TABS -->
+    <div class="container">
+      <div class="detail-tabs">
+        <div class="tab-headers">
+          <button class="tab-header active" data-tab="details">Details</button>
+          <button class="tab-header" data-tab="shipping">Shipping &amp; Returns</button>
+          <button class="tab-header" data-tab="reviews">Reviews (128)</button>
+        </div>
+        <div class="tab-panel active" id="tab-details">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <ul>
+            <li>Bluetooth 5.3 with 10m range</li>
+            <li>Active noise cancellation</li>
+            <li>30-hour battery, USB-C fast charge</li>
+            <li>Foldable design with carry pouch</li>
+          </ul>
+        </div>
+        <div class="tab-panel" id="tab-shipping">
+          <p>Orders ship within 1–2 business days. Standard delivery takes 3–5 business days; express options available at checkout. Returns accepted within 30 days of delivery in original packaging.</p>
+        </div>
+        <div class="tab-panel" id="tab-reviews">
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit — 128 verified buyers rated this product an average of 4 out of 5 stars.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RELATED PRODUCTS -->
+    <div class="container">
+      <h2 class="section-heading" style="margin-top:64px;">You may also like</h2>
+      <div class="product-grid" style="margin-top:32px;">
+        <div class="product-card">
+          <a href="product-detail.html?id=sneaker">
+            <div class="product-thumb">
+              <span class="product-tag">-20%</span>
+              <img src="../images/product-sneaker.png" alt="Street sneakers">
+            </div>
+            <div class="product-info">
+              <span class="cat">Fashion</span>
+              <h3>Ipsum Street Sneakers</h3>
+              <div class="price-row"><span class="price">$45.00</span></div>
+            </div>
+          </a>
+        </div>
+        <div class="product-card">
+          <a href="product-detail.html?id=watch">
+            <div class="product-thumb">
+              <span class="product-tag">HOT</span>
+              <img src="../images/product-watch.png" alt="Classic watch">
+            </div>
+            <div class="product-info">
+              <span class="cat">Accessories</span>
+              <h3>Dolor Classic Watch</h3>
+              <div class="price-row"><span class="price">$89.00</span></div>
+            </div>
+          </a>
+        </div>
+        <div class="product-card">
+          <a href="product-detail.html?id=sunglasses">
+            <div class="product-thumb">
+              <span class="product-tag">-15%</span>
+              <img src="../images/product-sunglasses.png" alt="Sunglasses">
+            </div>
+            <div class="product-info">
+              <span class="cat">Accessories</span>
+              <h3>Elit Aviator Sunglasses</h3>
+              <div class="price-row"><span class="price">$38.00</span></div>
+            </div>
+          </a>
+        </div>
+        <div class="product-card">
+          <a href="product-detail.html?id=backpack">
+            <div class="product-thumb">
+              <img src="../images/product-backpack.png" alt="Backpack">
+            </div>
+            <div class="product-info">
+              <span class="cat">Fashion</span>
+              <h3>Sed Weekender Backpack</h3>
+              <div class="price-row"><span class="price">$54.00</span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <img src="../images/logo-mark.svg" alt="">
+            Asia Bazaar
+          </a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit — every category, one honest marketplace.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="products.html">New Arrivals</a></li>
+            <li><a href="products.html">Best Sellers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="checkout.html">Shipping Info</a></li>
+            <li><a href="cart.html">Track Order</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Be Global</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Asia Bazaar. All rights reserved.</span>
+        <span>Built for the Be Global internship task</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/product-detail.js"></script>
+</body>
+</html>
