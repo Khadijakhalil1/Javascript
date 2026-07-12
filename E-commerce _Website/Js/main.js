@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     wish.addEventListener('click', () => {
       const active = wish.textContent.includes('♥');
       wish.textContent = active ? '♡' : '♥';
-      wish.style.color = active ? '' : '#FF6B35';
+      wish.style.color = active ? '' : '#FF4433';
     });
   });
 });

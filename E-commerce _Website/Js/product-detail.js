@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     wishBtn.addEventListener('click', () => {
       const active = wishBtn.textContent.includes('♥');
       wishBtn.textContent = active ? '♡' : '♥';
-      wishBtn.style.color = active ? '' : '#FF6B35';
+      wishBtn.style.color = active ? '' : '#FF4433';
     });
   }
 
