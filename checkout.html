@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout — Asia Bazaar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/shop.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="../index.html" class="logo">
+        <img src="../images/logo-mark.svg" alt="">
+        Asia <span class="accent">Bazaar</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="products.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="checkout.html" class="active">Checkout</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="icon-btn" aria-label="Search">🔍</button>
+        <a href="cart.html" class="icon-btn" aria-label="Cart">
+          🛍️<span class="badge">3</span>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="shop-hero">
+    <div class="container">
+      <h1>Checkout</h1>
+      <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="cart.html">Cart</a> / <span>Checkout</span></p>
+    </div>
+  </section>
+
+  <!-- ===================== CHECKOUT STEPS ===================== -->
+  <section class="checkout-steps">
+    <div class="container steps-row">
+      <div class="step done"><span class="step-num">✓</span><span>Cart</span></div>
+      <div class="step-line"></div>
+      <div class="step active"><span class="step-num">2</span><span>Checkout</span></div>
+      <div class="step-line"></div>
+      <div class="step"><span class="step-num">3</span><span>Confirmation</span></div>
+    </div>
+  </section>
+
+  <!-- ===================== CHECKOUT ===================== -->
+  <section class="checkout-section">
+    <form class="container checkout-layout" id="checkoutForm">
+
+      <div class="checkout-main">
+
+        <!-- DELIVERY DETAILS -->
+        <div class="checkout-card">
+          <h2>Delivery Details</h2>
+          <div class="form-grid">
+            <label class="field">
+              <span>Full Name</span>
+              <input type="text" name="fullName" placeholder="e.g. Khadija Khalil" required>
+            </label>
+            <label class="field">
+              <span>Phone Number</span>
+              <input type="tel" name="phone" placeholder="e.g. 0300 1234567" required>
+            </label>
+            <label class="field field-full">
+              <span>Email Address</span>
+              <input type="email" name="email" placeholder="you@example.com" required>
+            </label>
+            <label class="field field-full">
+              <span>Street Address</span>
+              <input type="text" name="address" placeholder="House no, street, area" required>
+            </label>
+            <label class="field">
+              <span>City</span>
+              <input type="text" name="city" placeholder="e.g. Faisalabad" required>
+            </label>
+            <label class="field">
+              <span>Postal Code</span>
+              <input type="text" name="postal" placeholder="e.g. 38000" required>
+            </label>
+            <label class="field field-full">
+              <span>Delivery Notes <em>(optional)</em></span>
+              <textarea name="notes" rows="3" placeholder="Landmark, delivery instructions, etc."></textarea>
+            </label>
+          </div>
+        </div>
+
+        <!-- SHIPPING METHOD -->
+        <div class="checkout-card">
+          <h2>Shipping Method</h2>
+          <div class="radio-list">
+            <label class="radio-option active">
+              <input type="radio" name="shipping" value="standard" checked>
+              <span class="radio-label">
+                <strong>Standard Delivery</strong>
+                <small>3–5 business days</small>
+              </span>
+              <span class="radio-price">$4.99</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="shipping" value="express">
+              <span class="radio-label">
+                <strong>Express Delivery</strong>
+                <small>1–2 business days</small>
+              </span>
+              <span class="radio-price">$12.99</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- PAYMENT PLACEHOLDER -->
+        <div class="checkout-card">
+          <h2>Payment</h2>
+          <p class="payment-disclaimer">This is a placeholder for demo purposes — no real payment is processed and no card data is transmitted or stored.</p>
+
+          <div class="radio-list">
+            <label class="radio-option active">
+              <input type="radio" name="payment" value="card" checked>
+              <span class="radio-label"><strong>Credit / Debit Card</strong></span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="payment" value="cod">
+              <span class="radio-label"><strong>Cash on Delivery</strong></span>
+            </label>
+          </div>
+
+          <div class="card-fields" id="cardFields">
+            <label class="field field-full">
+              <span>Card Number</span>
+              <input type="text" placeholder="4242 4242 4242 4242" maxlength="19" id="cardNumber">
+            </label>
+            <label class="field">
+              <span>Expiry (MM/YY)</span>
+              <input type="text" placeholder="MM/YY" maxlength="5" id="cardExpiry">
+            </label>
+            <label class="field">
+              <span>CVC</span>
+              <input type="text" placeholder="123" maxlength="3" id="cardCvc">
+            </label>
+            <label class="field field-full">
+              <span>Name on Card</span>
+              <input type="text" placeholder="e.g. Khadija Khalil">
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- ORDER SUMMARY -->
+      <aside class="order-summary checkout-summary">
+        <h3>Order Summary</h3>
+
+        <div class="checkout-mini-items">
+          <div class="mini-item">
+            <img src="../images/product-headphones.png" alt="">
+            <div><span>Lorem Wireless Headphones</span><small>Qty 1</small></div>
+            <span class="mini-price">$59.00</span>
+          </div>
+          <div class="mini-item">
+            <img src="../images/product-watch.png" alt="">
+            <div><span>Dolor Classic Watch</span><small>Qty 1</small></div>
+            <span class="mini-price">$89.00</span>
+          </div>
+          <div class="mini-item">
+            <img src="../images/product-bag.png" alt="">
+            <div><span>Amet Canvas Tote</span><small>Qty 1</small></div>
+            <span class="mini-price">$32.00</span>
+          </div>
+        </div>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span>$180.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span id="checkoutShipping">$4.99</span>
+        </div>
+        <div class="summary-row">
+          <span>Tax (estimated)</span>
+          <span>$9.00</span>
+        </div>
+        <div class="summary-row summary-total">
+          <span>Total</span>
+          <span id="checkoutTotal">$193.99</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary checkout-btn">Place Order →</button>
+        <p class="summary-note">By placing your order you agree to our Terms &amp; Conditions.</p>
+      </aside>
+    </form>
+
+    <!-- CONFIRMATION (shown after submit) -->
+    <div class="container">
+      <div class="order-confirmation" id="orderConfirmation" hidden>
+        <div class="confirm-icon">✓</div>
+        <h2>Order Placed Successfully!</h2>
+        <p>Thank you — this is a demo confirmation. Lorem ipsum dolor sit amet, your order number is <strong id="orderNumber">#AB-10492</strong>. A confirmation email would be sent to the address provided.</p>
+        <a href="../index.html" class="btn btn-primary">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <img src="../images/logo-mark.svg" alt="">
+            Asia Bazaar
+          </a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit — every category, one honest marketplace.</p>
+        </div>
+        <div>
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="products.html">New Arrivals</a></li>
+            <li><a href="products.html">Best Sellers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="checkout.html">Shipping Info</a></li>
+            <li><a href="cart.html">Track Order</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Be Global</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Asia Bazaar. All rights reserved.</span>
+        <span>Built for the Be Global internship task</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/checkout.js"></script>
+</body>
+</html>
