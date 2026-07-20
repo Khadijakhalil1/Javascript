@@ -1,0 +1,18 @@
+{
+  "name": "medicareplus-backend",
+  "version": "1.0.0",
+  "description": "MediCare Plus backend — appointment booking API with a local SQLite database (uses Node's built-in node:sqlite, no native database dependency to install)",
+  "main": "server.js",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node db/seed.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "express-session": "^1.19.0"
+  }
+}
