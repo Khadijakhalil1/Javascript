@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NestFinder Pro — Find Your Next Address</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="logo">
+        <img src="images/logo-mark.svg" alt="">
+        NestFinder <span class="accent">Pro</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="pages/listings.html">Properties</a></li>
+        <li><a href="pages/about.html">About Us</a></li>
+        <li><a href="pages/agents.html">Agents</a></li>
+        <li><a href="pages/contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="pages/login.html" class="btn btn-outline" style="padding:10px 20px;font-size:13px;">Log In</a>
+        <a href="pages/listings.html" class="btn btn-primary" style="padding:10px 22px;font-size:13px;">Browse Properties</a>
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+    <div class="mobile-nav-drawer container">
+      <a href="index.html" class="active">Home</a>
+      <a href="pages/listings.html">Properties</a>
+      <a href="pages/about.html">About Us</a>
+      <a href="pages/agents.html">Agents</a>
+      <a href="pages/contact.html">Contact</a>
+      <div class="mobile-nav-actions">
+        <a href="pages/login.html" class="btn btn-outline">Log In</a>
+        <a href="pages/listings.html" class="btn btn-primary">Browse</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-copy">
+        <span class="eyebrow">Premium properties, honest guidance</span>
+        <h1>Find a home that feels like <em>you</em>.</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. NestFinder Pro connects you with vetted listings and agents across the country's most sought-after neighborhoods.</p>
+      </div>
+
+      <form class="search-bar" id="heroSearchForm">
+        <div class="search-field">
+          <label>Location</label>
+          <input type="text" id="heroLocation" placeholder="City or neighborhood">
+        </div>
+        <div class="search-field">
+          <label>Property Type</label>
+          <select id="heroType">
+            <option value="">Any type</option>
+            <option value="apartment">Apartment</option>
+            <option value="villa">Villa</option>
+            <option value="townhouse">Townhouse</option>
+            <option value="penthouse">Penthouse</option>
+            <option value="studio">Studio</option>
+            <option value="commercial">Commercial</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label>Budget</label>
+          <select id="heroBudget">
+            <option value="">Any budget</option>
+            <option value="100000">Up to $100,000</option>
+            <option value="200000">Up to $200,000</option>
+            <option value="300000">Up to $300,000</option>
+            <option value="500000">Up to $500,000</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Search →</button>
+      </form>
+
+      <div class="hero-stats">
+        <div><strong>1,200+</strong><span>Properties listed</span></div>
+        <div><strong>340+</strong><span>Happy clients</span></div>
+        <div><strong>15+</strong><span>Years in business</span></div>
+        <div><strong>28</strong><span>Expert agents</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CATEGORIES ===================== -->
+  <section class="categories">
+    <div class="container">
+      <div class="listings-header">
+        <div>
+          <span class="eyebrow">Browse by purpose</span>
+          <h2 class="section-heading">What are you looking for?</h2>
+        </div>
+      </div>
+      <div class="category-grid">
+        <a href="pages/listings.html?purpose=sale" class="category-card">
+          <img src="images/prop-villa-1.png" alt="Properties for sale">
+          <div class="category-overlay">
+            <h3>Buy</h3>
+            <span>420+ properties for sale</span>
+          </div>
+        </a>
+        <a href="pages/listings.html?purpose=rent" class="category-card">
+          <img src="images/prop-apartment-2.png" alt="Properties for rent">
+          <div class="category-overlay">
+            <h3>Rent</h3>
+            <span>310+ properties for rent</span>
+          </div>
+        </a>
+        <a href="pages/listings.html?type=commercial" class="category-card">
+          <img src="images/prop-commercial-1.png" alt="Commercial properties">
+          <div class="category-overlay">
+            <h3>Commercial</h3>
+            <span>85+ commercial spaces</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURED LISTINGS ===================== -->
+  <section class="listings">
+    <div class="container">
+      <div class="listings-header">
+        <div>
+          <span class="eyebrow">Handpicked for you</span>
+          <h2 class="section-heading">Featured Listings</h2>
+        </div>
+        <p class="section-sub">A curated selection of our most sought-after properties this month.</p>
+      </div>
+
+      <div class="property-grid" id="featuredGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section class="testimonials">
+    <div class="container">
+      <span class="eyebrow">Client stories</span>
+      <h2 class="section-heading">What our clients say</h2>
+      <p class="section-sub">Lorem ipsum dolor sit amet, consectetur adipiscing elit — real experiences from the NestFinder Pro community.</p>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <span class="stars">★★★★★</span>
+          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Our agent understood exactly what we wanted and found it within two weeks."</p>
+          <div class="testimonial-person">
+            <img src="images/agent-1.png" alt="">
+            <div><strong>Hira Sheikh</strong><span>Bought a villa in Lahore</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <span class="stars">★★★★★</span>
+          <p>"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. The whole process felt transparent from day one."</p>
+          <div class="testimonial-person">
+            <img src="images/agent-2.png" alt="">
+            <div><strong>Junaid Iqbal</strong><span>Rented an office in Islamabad</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <span class="stars">★★★★★</span>
+          <p>"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Highly recommend NestFinder Pro to any first-time buyer."</p>
+          <div class="testimonial-person">
+            <img src="images/agent-3.png" alt="">
+            <div><strong>Mahnoor Aslam</strong><span>Bought an apartment in Karachi</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-banner">
+        <span class="eyebrow">Ready when you are</span>
+        <h2>Let's find your next address together</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Speak with one of our agents or start browsing listings right now.</p>
+        <div class="cta-actions">
+          <a href="pages/listings.html" class="btn btn-primary">Browse Properties →</a>
+          <a href="pages/contact.html" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.4);">Talk to an Agent</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">
+            <img src="images/logo-mark.svg" alt="">
+            NestFinder <span class="accent">Pro</span>
+          </a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit — premium real estate, honest guidance.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="pages/listings.html">All Properties</a></li>
+            <li><a href="pages/about.html">About Us</a></li>
+            <li><a href="pages/agents.html">Our Agents</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Account</h4>
+          <ul>
+            <li><a href="pages/login.html">Log In</a></li>
+            <li><a href="pages/login.html">Saved Properties</a></li>
+            <li><a href="pages/contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+923000000000">+92 300 0000000</a></li>
+            <li><a href="mailto:hello@nestfinderpro.demo">hello@nestfinderpro.demo</a></li>
+            <li><a href="pages/contact.html">Get Directions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 NestFinder Pro. All rights reserved.</span>
+        <span>Built for the Be Global internship task</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/properties-data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
