@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Property Listings — NestFinder Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="../index.html" class="logo">
+        <img src="../images/logo-mark.svg" alt="">
+        NestFinder <span class="accent">Pro</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="listings.html" class="active">Properties</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="agents.html">Agents</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline" style="padding:10px 20px;font-size:13px;">Log In</a>
+        <a href="listings.html" class="btn btn-primary" style="padding:10px 22px;font-size:13px;">Browse Properties</a>
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+    <div class="mobile-nav-drawer container">
+      <a href="../index.html">Home</a>
+      <a href="listings.html" class="active">Properties</a>
+      <a href="about.html">About Us</a>
+      <a href="agents.html">Agents</a>
+      <a href="contact.html">Contact</a>
+      <div class="mobile-nav-actions">
+        <a href="login.html" class="btn btn-outline">Log In</a>
+        <a href="listings.html" class="btn btn-primary">Browse</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== PAGE HERO ===================== -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">1,200+ properties</span>
+      <h1>Property Listings</h1>
+      <p class="breadcrumb"><a href="../index.html">Home</a> / <span>Properties</span></p>
+    </div>
+  </section>
+
+  <!-- ===================== LISTINGS LAYOUT ===================== -->
+  <section class="shop">
+    <div class="container shop-layout">
+
+      <!-- FILTERS SIDEBAR -->
+      <aside class="filters" aria-label="Property filters">
+        <div class="filter-block">
+          <h3>Search</h3>
+          <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Title or location…">
+            <span>🔍</span>
+          </div>
+        </div>
+
+        <div class="filter-block">
+          <h3>Purpose</h3>
+          <ul class="filter-list" id="purposeFilters">
+            <li><label><input type="checkbox" value="all" checked> All <span id="countAll"></span></label></li>
+            <li><label><input type="checkbox" value="sale"> For Sale <span id="countSale"></span></label></li>
+            <li><label><input type="checkbox" value="rent"> For Rent <span id="countRent"></span></label></li>
+          </ul>
+        </div>
+
+        <div class="filter-block">
+          <h3>Property Type</h3>
+          <ul class="filter-list" id="typeFilters">
+            <li><label><input type="checkbox" value="apartment"> Apartment</label></li>
+            <li><label><input type="checkbox" value="villa"> Villa</label></li>
+            <li><label><input type="checkbox" value="townhouse"> Townhouse</label></li>
+            <li><label><input type="checkbox" value="penthouse"> Penthouse</label></li>
+            <li><label><input type="checkbox" value="studio"> Studio</label></li>
+            <li><label><input type="checkbox" value="commercial"> Commercial</label></li>
+          </ul>
+        </div>
+
+        <div class="filter-block">
+          <h3>Max Price</h3>
+          <input type="range" id="priceRange" min="0" max="500000" value="500000" step="5000">
+          <div class="price-range-labels">
+            <span>$0</span>
+            <span id="priceValue">$500,000+</span>
+          </div>
+        </div>
+
+        <div class="filter-block">
+          <h3>Bedrooms</h3>
+          <div class="bedroom-pills" id="bedroomFilters">
+            <button class="pill active" data-value="0">Any</button>
+            <button class="pill" data-value="1">1+</button>
+            <button class="pill" data-value="2">2+</button>
+            <button class="pill" data-value="3">3+</button>
+            <button class="pill" data-value="4">4+</button>
+          </div>
+        </div>
+
+        <button class="btn btn-outline reset-btn" id="resetFilters">Reset Filters</button>
+      </aside>
+
+      <!-- LISTINGS -->
+      <div class="shop-main">
+        <div class="shop-toolbar">
+          <p id="resultCount"><strong>12</strong> properties found</p>
+          <div class="sort-box">
+            <label for="sortSelect">Sort by</label>
+            <select id="sortSelect">
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="area-desc">Largest Area</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="property-grid" id="listingsGrid"></div>
+
+        <p class="empty-state" id="emptyState" hidden>No properties match your filters. Try resetting them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <img src="../images/logo-mark.svg" alt="">
+            NestFinder <span class="accent">Pro</span>
+          </a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit — premium real estate, honest guidance.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="listings.html">All Properties</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="agents.html">Our Agents</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Account</h4>
+          <ul>
+            <li><a href="login.html">Log In</a></li>
+            <li><a href="login.html">Saved Properties</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+923000000000">+92 300 0000000</a></li>
+            <li><a href="mailto:hello@nestfinderpro.demo">hello@nestfinderpro.demo</a></li>
+            <li><a href="contact.html">Get Directions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 NestFinder Pro. All rights reserved.</span>
+        <span>Built for the Be Global internship task</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/properties-data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/listings.js"></script>
+</body>
+</html>
