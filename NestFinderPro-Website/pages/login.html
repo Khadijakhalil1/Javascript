@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log In — NestFinder Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="../index.html" class="logo">
+        <img src="../images/logo-mark.svg" alt="">
+        NestFinder <span class="accent">Pro</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="listings.html">Properties</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="agents.html">Agents</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline" style="padding:10px 20px;font-size:13px;">Log In</a>
+        <a href="listings.html" class="btn btn-primary" style="padding:10px 22px;font-size:13px;">Browse Properties</a>
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+    <div class="mobile-nav-drawer container">
+      <a href="../index.html">Home</a>
+      <a href="listings.html">Properties</a>
+      <a href="about.html">About Us</a>
+      <a href="agents.html">Agents</a>
+      <a href="contact.html">Contact</a>
+      <div class="mobile-nav-actions">
+        <a href="login.html" class="btn btn-outline">Log In</a>
+        <a href="listings.html" class="btn btn-primary">Browse</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="api-status-banner" id="apiStatusBanner" hidden>
+    ⚠️ Can't reach the backend right now. Start it with <code>node server.js</code> inside <code>/backend</code>, then refresh this page.
+  </div>
+
+  <!-- ===================== LOGGED-OUT STATE ===================== -->
+  <section class="auth-section" id="authSection">
+    <div class="container auth-layout">
+      <div class="auth-card">
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-tab="login">Log In</button>
+          <button class="auth-tab" data-tab="register">Register</button>
+        </div>
+
+        <form id="loginForm" class="auth-form">
+          <label class="field field-full">
+            <span>Email Address</span>
+            <input type="email" name="email" placeholder="you@example.com" required>
+          </label>
+          <label class="field field-full">
+            <span>Password</span>
+            <input type="password" name="password" placeholder="••••••••" required>
+          </label>
+          <button type="submit" class="btn btn-primary auth-submit">Log In →</button>
+          <p class="form-error" id="loginError" hidden></p>
+        </form>
+
+        <form id="registerForm" class="auth-form" hidden>
+          <label class="field field-full">
+            <span>Full Name</span>
+            <input type="text" name="fullName" placeholder="e.g. Khadija Khalil" required>
+          </label>
+          <label class="field field-full">
+            <span>Email Address</span>
+            <input type="email" name="email" placeholder="you@example.com" required>
+          </label>
+          <label class="field field-full">
+            <span>Password</span>
+            <input type="password" name="password" placeholder="At least 6 characters" minlength="6" required>
+          </label>
+          <label class="field field-full">
+            <span>Confirm Password</span>
+            <input type="password" name="confirmPassword" placeholder="••••••••" minlength="6" required>
+          </label>
+          <button type="submit" class="btn btn-primary auth-submit">Create Account →</button>
+          <p class="form-error" id="registerError" hidden></p>
+        </form>
+      </div>
+
+      <div class="auth-side">
+        <img src="../images/prop-villa-3.png" alt="" class="auth-illustration">
+        <h3>Your properties, your enquiries, one dashboard</h3>
+        <ul>
+          <li>✓ Save properties and revisit them anytime</li>
+          <li>✓ Track every enquiry you've sent</li>
+          <li>✓ Your data is only ever visible to you</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LOGGED-IN STATE (dashboard) ===================== -->
+  <section class="portal-section" id="portalSection" hidden>
+    <div class="container">
+      <div class="portal-header">
+        <div>
+          <span class="eyebrow">Your Dashboard</span>
+          <h1 id="welcomeName">Welcome back</h1>
+        </div>
+        <div class="portal-actions">
+          <a href="listings.html" class="btn btn-primary">Browse Properties →</a>
+          <button class="btn btn-outline" id="logoutBtn">Log Out</button>
+        </div>
+      </div>
+
+      <div class="dashboard-tabs">
+        <button class="dash-tab active" data-tab="saved">Saved Properties</button>
+        <button class="dash-tab" data-tab="enquiries">My Enquiries</button>
+        <button class="dash-tab" data-tab="profile">Profile</button>
+      </div>
+
+      <div class="dash-panel active" id="dashSaved">
+        <div class="property-grid" id="savedGrid"></div>
+        <p class="empty-state" id="noSaved" hidden>No saved properties yet. <a href="listings.html">Browse listings →</a></p>
+      </div>
+
+      <div class="dash-panel" id="dashEnquiries">
+        <div class="enquiries-list" id="enquiriesList"></div>
+        <p class="empty-state" id="noEnquiries" hidden>No enquiries sent yet. <a href="listings.html">Find a property to ask about →</a></p>
+      </div>
+
+      <div class="dash-panel" id="dashProfile">
+        <form id="profileForm" class="profile-form">
+          <label class="field">
+            <span>Full Name</span>
+            <input type="text" name="fullName" id="profileFullName" required>
+          </label>
+          <label class="field">
+            <span>Email Address</span>
+            <input type="email" id="profileEmail" disabled>
+          </label>
+          <button type="submit" class="btn btn-primary">Save Changes →</button>
+          <p class="form-success" id="profileSuccess" hidden>✓ Profile updated.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <img src="../images/logo-mark.svg" alt="">
+            NestFinder <span class="accent">Pro</span>
+          </a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit — premium real estate, honest guidance.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="listings.html">All Properties</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="agents.html">Our Agents</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Account</h4>
+          <ul>
+            <li><a href="login.html">Log In</a></li>
+            <li><a href="login.html">Saved Properties</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+923000000000">+92 300 0000000</a></li>
+            <li><a href="mailto:hello@nestfinderpro.demo">hello@nestfinderpro.demo</a></li>
+            <li><a href="contact.html">Get Directions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 NestFinder Pro. All rights reserved.</span>
+        <span>Built for the Be Global internship task</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/auth.js"></script>
+</body>
+</html>
