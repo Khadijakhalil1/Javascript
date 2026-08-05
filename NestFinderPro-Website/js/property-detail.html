@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Property Detail — NestFinder Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="../index.html" class="logo">
+        <img src="../images/logo-mark.svg" alt="">
+        NestFinder <span class="accent">Pro</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="listings.html" class="active">Properties</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="agents.html">Agents</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline" style="padding:10px 20px;font-size:13px;">Log In</a>
+        <a href="listings.html" class="btn btn-primary" style="padding:10px 22px;font-size:13px;">Browse Properties</a>
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+    <div class="mobile-nav-drawer container">
+      <a href="../index.html">Home</a>
+      <a href="listings.html" class="active">Properties</a>
+      <a href="about.html">About Us</a>
+      <a href="agents.html">Agents</a>
+      <a href="contact.html">Contact</a>
+      <div class="mobile-nav-actions">
+        <a href="login.html" class="btn btn-outline">Log In</a>
+        <a href="listings.html" class="btn btn-primary">Browse</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero" style="padding-bottom:20px;">
+    <div class="container">
+      <p class="breadcrumb"><a href="../index.html">Home</a> / <a href="listings.html">Properties</a> / <span id="breadcrumbName">Property</span></p>
+    </div>
+  </section>
+
+  <!-- ===================== GALLERY + INFO (populated by JS) ===================== -->
+  <section class="detail-section" id="detailContent">
+    <!-- populated by js/property-detail.js -->
+  </section>
+
+  <!-- ===================== NOT FOUND ===================== -->
+  <section class="container" id="notFoundState" hidden style="padding: 80px 32px; text-align:center;">
+    <h2 style="font-family:var(--font-heading);">Property not found</h2>
+    <p class="section-sub" style="margin:12px auto;">This listing may have been sold or removed. Browse our current properties instead.</p>
+    <a href="listings.html" class="btn btn-primary">Browse Properties</a>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo">
+            <img src="../images/logo-mark.svg" alt="">
+            NestFinder <span class="accent">Pro</span>
+          </a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit — premium real estate, honest guidance.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="listings.html">All Properties</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="agents.html">Our Agents</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Account</h4>
+          <ul>
+            <li><a href="login.html">Log In</a></li>
+            <li><a href="login.html">Saved Properties</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+923000000000">+92 300 0000000</a></li>
+            <li><a href="mailto:hello@nestfinderpro.demo">hello@nestfinderpro.demo</a></li>
+            <li><a href="contact.html">Get Directions</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 NestFinder Pro. All rights reserved.</span>
+        <span>Built for the Be Global internship task</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/properties-data.js"></script>
+  <script src="../js/agents-data.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/property-detail.js"></script>
+</body>
+</html>
