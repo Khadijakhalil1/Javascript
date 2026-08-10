@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wanderlust Trails — Find Your Next Journey</title>
+<meta name="description" content="Wanderlust Trails plans adventure, cultural, beach, and family tours to destinations worldwide. Browse packages, book online, and travel with confidence." />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a href="index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" stroke="#0077B6" stroke-width="2"/>
+        <path d="M8 24C13 18 16 26 21 20C25 15 28 21 32 16" stroke="#F4A261" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+        <circle cx="8" cy="24" r="2.2" fill="#03045E"/>
+        <circle cx="32" cy="16" r="2.2" fill="#03045E"/>
+      </svg>
+      Wanderlust Trails
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="pages/packages.html">Packages</a></li>
+      <li><a href="pages/destinations.html">Destinations</a></li>
+      <li><a href="pages/booking.html">Book a Tour</a></li>
+      <li><a href="pages/reviews.html">Reviews</a></li>
+      <li><a href="pages/about.html">About</a></li>
+      <li><a href="pages/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="pages/login.html" class="btn btn-dark" style="padding:10px 20px;">Login</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <svg class="hero-route" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M-50 620 C 200 520, 300 700, 500 560 S 800 380, 1000 460 S 1300 300, 1400 200" />
+      <circle cx="-50" cy="620" r="5"/>
+      <circle cx="500" cy="560" r="5"/>
+      <circle cx="1000" cy="460" r="5"/>
+    </svg>
+    <div class="hero-inner">
+      <span class="eyebrow">Plan Less. Wander More.</span>
+      <h1>Every trail leads<br>somewhere unforgettable.</h1>
+      <p class="lede">Handpicked adventure, cultural, beach, and family tours — planned by people who've actually been there. Browse, book, and go.</p>
+
+      <form id="hero-search" class="hero-search" aria-label="Search tour packages">
+        <label for="hero-destination" class="visually-hidden" style="position:absolute;left:-9999px;">Destination</label>
+        <select id="hero-destination">
+          <option value="">Where to?</option>
+          <option value="Bali, Indonesia">Bali, Indonesia</option>
+          <option value="Interlaken, Switzerland">Swiss Alps</option>
+          <option value="Marrakech, Morocco">Marrakech, Morocco</option>
+          <option value="Santorini, Greece">Santorini, Greece</option>
+          <option value="Kyoto, Japan">Kyoto, Japan</option>
+          <option value="Malé, Maldives">Maldives</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Search Tours</button>
+      </form>
+
+      <div class="hero-stats">
+        <div><strong>240+</strong><span>Tours Completed</span></div>
+        <div><strong>38</strong><span>Destinations</span></div>
+        <div><strong>4.8★</strong><span>Average Rating</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED PACKAGES ============ -->
+  <section class="section container">
+    <div class="section-head">
+      <span class="eyebrow">Handpicked</span>
+      <h2 class="section-title">Featured tour packages</h2>
+      <p class="section-sub">A starting point — the trips our travelers rate highest this season.</p>
+    </div>
+    <div id="featured-grid" class="pkg-grid" aria-live="polite"></div>
+    <div style="text-align:center;margin-top:44px;">
+      <a href="pages/packages.html" class="btn btn-dark">Browse All Packages</a>
+    </div>
+  </section>
+
+  <!-- ============ POPULAR DESTINATIONS ============ -->
+  <section class="section container" style="padding-top:0;">
+    <div class="section-head">
+      <span class="eyebrow">Where travelers are headed</span>
+      <h2 class="section-title">Popular destinations</h2>
+      <p class="section-sub">Tap a destination to see every package we run there.</p>
+    </div>
+    <div id="destinations-grid" class="dest-grid"></div>
+  </section>
+
+  <!-- ============ TESTIMONIALS ============ -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" style="color:var(--color-secondary);">Traveler stories</span>
+        <h2 class="section-title">What our travelers say</h2>
+      </div>
+      <div id="testimonials-grid" class="testimonials-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ NEWSLETTER ============ -->
+  <section class="section container">
+    <div class="newsletter">
+      <div>
+        <h2>Get trip inspiration in your inbox</h2>
+        <p>New destinations, seasonal deals, and travel tips — no spam, unsubscribe anytime.</p>
+      </div>
+      <div>
+        <form id="newsletter-form" class="newsletter-form">
+          <label for="newsletter-email" style="position:absolute;left:-9999px;">Email address</label>
+          <input id="newsletter-email" type="email" required placeholder="you@example.com" />
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p class="newsletter-status"></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand" style="color:var(--color-white);margin-bottom:12px;">Wanderlust Trails</div>
+        <p>A fictional travel & tourism agency built for demonstration — planning journeys across every kind of trail: coastal, cultural, wild, and family-friendly.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="X / Twitter">X</a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="pages/packages.html">Tour Packages</a></li>
+          <li><a href="pages/destinations.html">Destinations</a></li>
+          <li><a href="pages/booking.html">Book a Tour</a></li>
+          <li><a href="pages/reviews.html">Reviews</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="pages/about.html">About Us</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+          <li><a href="pages/login.html">My Account</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>123 Trailhead Ave, Explorer City</li>
+          <li>hello@wanderlusttrails.example</li>
+          <li>+1 (555) 019-2837</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Wanderlust Trails. All rights reserved.</span>
+      <span>Fictional agency — built for internship training purposes.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>
