@@ -1,0 +1,202 @@
+/* =========================================================
+   Wanderlust Trails — Home page styles
+   ========================================================= */
+
+/* --- Hero --- */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  color: var(--color-white);
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(3,4,94,0.55) 0%, rgba(3,4,94,0.72) 60%, rgba(3,4,94,0.9) 100%),
+              url("https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1600&q=80") center/cover no-repeat;
+}
+
+/* dashed route line + dot markers drifting across the hero — the site's
+   signature "trail" motif, echoing the brand name */
+.hero-route {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.55;
+}
+.hero-route path {
+  fill: none;
+  stroke: var(--color-secondary);
+  stroke-width: 2;
+  stroke-dasharray: 3 12;
+  stroke-linecap: round;
+  animation: dash-drift 26s linear infinite;
+}
+.hero-route circle { fill: var(--color-secondary); }
+@keyframes dash-drift {
+  to { stroke-dashoffset: -300; }
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  padding: 120px 24px 80px;
+  margin: 0 auto;
+  width: 100%;
+}
+.hero-inner .eyebrow { color: var(--color-secondary); }
+.hero-inner .eyebrow::before { background: var(--color-white); }
+.hero-inner h1 {
+  color: var(--color-white);
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  font-weight: 800;
+}
+.hero-inner p.lede {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.85);
+  max-width: 560px;
+}
+
+.hero-search {
+  margin-top: 32px;
+  background: rgba(255,255,255,0.97);
+  border-radius: var(--radius-md);
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  box-shadow: var(--shadow-hover);
+}
+.hero-search select,
+.hero-search input {
+  border: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-ink);
+  padding: 12px 14px;
+  flex: 1;
+  border-radius: var(--radius-sm);
+}
+.hero-search select:focus,
+.hero-search input:focus { background: var(--color-tertiary); outline: none; }
+.hero-search button { flex-shrink: 0; }
+
+.hero-stats {
+  display: flex;
+  gap: 36px;
+  margin-top: 44px;
+}
+.hero-stats div strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-white);
+}
+.hero-stats div span {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 640px) {
+  .hero-search { flex-wrap: wrap; }
+  .hero-search select, .hero-search input { flex: 1 1 100%; }
+  .hero-stats { flex-wrap: wrap; gap: 24px; }
+}
+
+/* --- Featured packages grid --- */
+.pkg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 26px;
+}
+
+/* --- Destinations --- */
+.dest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.dest-card {
+  position: relative;
+  display: block;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 4/3.4;
+}
+.dest-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease); }
+.dest-card:hover img { transform: scale(1.08); }
+.dest-card-label {
+  position: absolute; inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  background: linear-gradient(180deg, transparent 40%, rgba(3,4,94,0.85) 100%);
+}
+.dest-card-label h3 { color: var(--color-white); font-size: 1.1rem; margin-bottom: 4px; }
+.dest-card-label span { color: var(--color-secondary); font-size: 0.85rem; font-weight: 600; opacity: 0; transform: translateY(6px); transition: 0.25s var(--ease); }
+.dest-card:hover .dest-card-label span { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 900px) { .dest-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .dest-grid { grid-template-columns: 1fr; } }
+
+/* --- Testimonials --- */
+.section-dark { background: var(--color-dark); color: rgba(255,255,255,0.85); }
+.section-dark .section-title { color: var(--color-white); }
+.section-dark .section-sub { color: rgba(255,255,255,0.6); }
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.testimonial-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  margin: 0;
+}
+.testimonial-card blockquote {
+  margin: 14px 0 18px;
+  font-size: 1.02rem;
+  color: rgba(255,255,255,0.9);
+  font-style: italic;
+}
+.testimonial-card figcaption { display: flex; flex-direction: column; font-family: var(--font-display); }
+.testimonial-card figcaption strong { color: var(--color-white); font-size: 0.92rem; }
+.testimonial-card figcaption span { color: var(--color-secondary); font-size: 0.8rem; }
+
+@media (max-width: 900px) { .testimonials-grid { grid-template-columns: 1fr; } }
+
+/* --- Newsletter --- */
+.newsletter {
+  background: var(--color-primary);
+  border-radius: var(--radius-lg);
+  padding: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  color: var(--color-white);
+}
+.newsletter h2 { color: var(--color-white); margin-bottom: 6px; }
+.newsletter p { color: rgba(255,255,255,0.8); margin: 0; }
+.newsletter-form { display: flex; gap: 10px; flex: 0 0 420px; }
+.newsletter-form input {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 999px;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+.newsletter-status { display: none; margin-top: 10px; font-size: 0.88rem; color: var(--color-white); font-weight: 600; }
+.newsletter-status.visible { display: block; }
+
+@media (max-width: 800px) {
+  .newsletter { flex-direction: column; align-items: flex-start; padding: 36px 24px; }
+  .newsletter-form { flex: 1 1 100%; width: 100%; }
+}
