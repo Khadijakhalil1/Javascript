@@ -1,0 +1,343 @@
+/* =========================================================
+   Wanderlust Trails — Global Stylesheet
+   Design tokens + base/reset + shared components (nav, footer,
+   buttons, cards, forms) used across every page.
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Lato:wght@300;400;600;700&display=swap');
+
+:root {
+  /* --- Brand palette (per client spec) --- */
+  --color-primary: #0077B6;      /* Ocean Blue   — buttons, links, navbar, highlights */
+  --color-secondary: #F4A261;    /* Sunset Orange— CTAs, badges, price tags, accents  */
+  --color-tertiary: #FAF3E0;     /* Sandy Beige  — page backgrounds, card backgrounds */
+  --color-dark: #03045E;         /* Deep Navy    — headings, footer, dark sections    */
+  --color-accent: #2D6A4F;       /* Leaf Green   — tags, availability, nature         */
+
+  /* --- Supporting neutrals --- */
+  --color-white: #FFFFFF;
+  --color-ink: #22283A;          /* body copy on light backgrounds */
+  --color-muted: #6B7280;
+  --color-border: rgba(3, 4, 94, 0.10);
+
+  /* --- Type --- */
+  --font-display: 'Montserrat', sans-serif;
+  --font-body: 'Lato', sans-serif;
+
+  /* --- Layout --- */
+  --max-width: 1200px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 28px;
+  --shadow-card: 0 10px 30px -12px rgba(3, 4, 94, 0.18);
+  --shadow-hover: 0 18px 40px -14px rgba(3, 4, 94, 0.28);
+
+  /* --- Motion --- */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: var(--color-tertiary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--color-dark);
+  margin: 0 0 0.5em;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+p { margin: 0 0 1em; }
+
+a { color: var(--color-primary); text-decoration: none; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Focus visibility (accessibility) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+
+/* Eyebrow label used above section headings */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 10px;
+}
+.eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 2px;
+  background: var(--color-secondary);
+  display: inline-block;
+}
+
+.section { padding: 88px 0; }
+.section-title { font-size: clamp(1.8rem, 3vw, 2.5rem); max-width: 640px; }
+.section-sub { color: var(--color-muted); max-width: 560px; font-size: 1.05rem; }
+.section-head { margin-bottom: 44px; }
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 14px 28px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background 0.25s var(--ease);
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--color-secondary);
+  color: var(--color-dark);
+  box-shadow: 0 10px 24px -10px rgba(244, 162, 97, 0.7);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 14px 28px -10px rgba(244, 162, 97, 0.85); }
+.btn-outline {
+  background: transparent;
+  border-color: currentColor;
+  color: var(--color-white);
+}
+.btn-outline:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+.btn-dark {
+  background: var(--color-dark);
+  color: var(--color-white);
+}
+.btn-dark:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+.btn-block { width: 100%; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none !important; }
+
+/* --- Site header / nav --- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 243, 224, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--color-dark);
+}
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--color-dark);
+  position: relative;
+  padding: 4px 0;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -2px;
+  width: 0; height: 2px;
+  background: var(--color-secondary);
+  transition: width 0.25s var(--ease);
+}
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 100%; }
+.nav-links a.active { color: var(--color-primary); }
+.nav-actions { display: flex; align-items: center; gap: 14px; }
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-dark);
+  margin: 5px 0;
+  transition: 0.25s var(--ease);
+}
+
+@media (max-width: 860px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    background: var(--color-tertiary);
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s var(--ease);
+    border-bottom: 1px solid var(--color-border);
+  }
+  .nav-links.open { max-height: 400px; }
+  .nav-links li { padding: 14px 24px; border-top: 1px solid var(--color-border); }
+  .nav-toggle { display: block; }
+}
+
+/* --- Footer --- */
+.site-footer {
+  background: var(--color-dark);
+  color: rgba(255,255,255,0.75);
+  padding: 64px 0 28px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+.footer-grid h4 {
+  color: var(--color-white);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.footer-grid ul { list-style: none; margin: 0; padding: 0; }
+.footer-grid li { margin-bottom: 10px; }
+.footer-grid a { color: rgba(255,255,255,0.75); }
+.footer-grid a:hover { color: var(--color-secondary); }
+.footer-brand p { color: rgba(255,255,255,0.6); max-width: 320px; }
+.footer-social { display: flex; gap: 12px; margin-top: 16px; }
+.footer-social a {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-white);
+  transition: background 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+.footer-social a:hover { background: var(--color-secondary); border-color: var(--color-secondary); color: var(--color-dark); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+}
+@media (max-width: 760px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; gap: 8px; }
+}
+
+/* --- Stars --- */
+.stars { color: var(--color-secondary); letter-spacing: 2px; font-size: 0.95rem; }
+
+/* --- Badges / tags --- */
+.tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+.tag-accent { background: rgba(45, 106, 79, 0.12); color: var(--color-accent); }
+.tag-secondary { background: rgba(244, 162, 97, 0.18); color: #a55a1e; }
+
+/* --- Package card (shared: home featured + listing grid) --- */
+.pkg-card {
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+  display: flex;
+  flex-direction: column;
+}
+.pkg-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+.pkg-card-media { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+.pkg-card-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease); }
+.pkg-card:hover .pkg-card-media img { transform: scale(1.07); }
+.pkg-card-price {
+  position: absolute;
+  top: 14px; right: 14px;
+  background: var(--color-secondary);
+  color: var(--color-dark);
+  font-family: var(--font-display);
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  box-shadow: 0 6px 14px -6px rgba(0,0,0,0.35);
+}
+.pkg-card-type {
+  position: absolute;
+  top: 14px; left: 14px;
+}
+.pkg-card-body { padding: 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.pkg-card-dest { color: var(--color-muted); font-size: 0.85rem; display: flex; align-items: center; gap: 6px; }
+.pkg-card-body h3 { font-size: 1.15rem; margin-bottom: 2px; }
+.pkg-card-meta { display: flex; justify-content: space-between; align-items: center; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--color-border); font-size: 0.85rem; color: var(--color-muted); }
+.pkg-card-rating { display: flex; align-items: center; gap: 6px; }
+.pkg-card-cta { margin-top: 12px; }
+
+/* --- Route / trail motif (signature element) ---
+   A dashed arcing path used behind the hero and as a thin
+   divider — visual echo of a route on a travel map. */
+.trail-divider { display: block; width: 100%; height: 46px; }
+.trail-divider path { fill: none; stroke: var(--color-primary); stroke-width: 2; stroke-dasharray: 2 10; stroke-linecap: round; opacity: 0.5; }
+.trail-divider circle { fill: var(--color-secondary); }
